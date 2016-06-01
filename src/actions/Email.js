@@ -1,4 +1,4 @@
-import { EmailTemplate } from 'email-templates'
+import { EmailTemplate } from 'email-template'
 import { templateProps } from '../helpers';
 
 export default class Email {
