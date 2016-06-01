@@ -1,4 +1,4 @@
-import Spreadsheet from 'google-spreadsheets-append');
+import Spreadsheet from 'google-spreadsheets-append';
 
 import { templateProps } from '../helpers';
 
