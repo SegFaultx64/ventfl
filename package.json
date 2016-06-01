@@ -10,10 +10,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "email-template": "0.0.1",
     "faye": "^1.1.2",
     "lodash": "^4.8.1",
     "mailchimp": "^1.1.5",
-    "slack-node": "^0.2.0"
+    "node-sass": "^3.7.0",
+    "nodemailer": "^2.4.2",
+    "slack-node": "^0.2.0",
+    "swig": "^1.4.2"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
