@@ -1,6 +1,8 @@
 import { EmailTemplate } from 'email-template'
 import { templateProps } from '../helpers';
 
+import nodemailer from 'nodemailer';
+
 export default class Email {
   constructor({ transport }) {
     this.mailer = nodemailer.createTransport(transport);
