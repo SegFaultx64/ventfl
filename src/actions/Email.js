@@ -1,4 +1,4 @@
-import { EmailTemplate } from 'email-template'
+import { EmailTemplate } from 'email-templates'
 import { templateProps } from '../helpers';
 
 import nodemailer from 'nodemailer';
@@ -8,23 +8,23 @@ export default class Email {
     this.mailer = nodemailer.createTransport(transport);
   }
 
-  sendEmail(props) {
+  sendEmail(props, getExtraProps = (() => { return {} })) {
 
     return (data) => {
-      const { from, to, subject, html: _html, template, cc, bcc } = templateProps(props);
+      const { from, to, subject, html: _html, template, cc, bcc } = templateProps(props, {...data, ...getExtraProps()});
 
       let html = _html;
 
       if (template) {
-        templated = new EmailTemplate(templateDir)
+        const templated = new EmailTemplate(template)
 
-        templated.render(data, function (err, result) {
+        templated.render(data, (err, result) => {
           if (err) {
             console.error(err)
             throw err;
           }
 
-          transport.sendMail({
+          this.mailer.sendMail({
             from,
             to,
             subject,
@@ -32,7 +32,7 @@ export default class Email {
           }, function(err, info) { });
         })
       } else {
-        transport.sendMail({
+        this.mailer.sendMail({
           from,
           to,
           subject,
