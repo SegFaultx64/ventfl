@@ -28,6 +28,8 @@ export default class Email {
             from,
             to,
             subject,
+            cc,
+            bcc
             html: result.html,
           }, function(err, info) { });
         })
