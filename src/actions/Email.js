@@ -29,7 +29,7 @@ export default class Email {
             to,
             subject,
             cc,
-            bcc
+            bcc,
             html: result.html,
           }, function(err, info) { });
         })
