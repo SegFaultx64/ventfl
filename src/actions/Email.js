@@ -1,16 +1,15 @@
 import { EmailTemplate } from 'email-templates'
 import { templateProps } from '../helpers';
 
-
 export default class Email {
-  constructor(transport) {
+  constructor({ transport }) {
     this.mailer = nodemailer.createTransport(transport);
   }
 
   sendEmail(props) {
 
     return (data) => {
-      const { from, to, subject, html: _html, template } = templateProps(props);
+      const { from, to, subject, html: _html, template, cc, bcc } = templateProps(props);
 
       let html = _html;
 
@@ -36,6 +35,8 @@ export default class Email {
           to,
           subject,
           html,
+          cc,
+          bcc
         }, function(err, info) { });
       }
     }
