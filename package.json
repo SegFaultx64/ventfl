@@ -13,6 +13,7 @@
     "email-template": "0.0.1",
     "email-templates": "^2.3.0",
     "faye": "^1.1.2",
+    "google-spreadsheet-append-es5": "0.0.5",
     "lodash": "^4.8.1",
     "mailchimp": "^1.1.5",
     "node-sass": "^3.7.0",
